@@ -23,11 +23,12 @@ const dropzoneStyle = {
   justifyContent: 'center',
   textAlign: 'center',
   borderStyle: 'dashed',
-  background: 'rgb(229, 255, 254)',
   borderColor: '#00b5ad',
+  background: 'rgba(0, 181, 173, 0.25)',
   color: '#00b5ad',
   fontFamily: 'Lato,Helvetica Neue,Arial,Helvetica,sans-serif',
-  fontSize: 20
+  fontSize: 20,
+  cursor: 'pointer'
 };
 
 class AddWordDropzoneComponent extends Component {
@@ -68,7 +69,7 @@ class AddWordDropzoneComponent extends Component {
           <i style={ { fontSize: 50 } } className="spinner loading icon"></i>
         ) }
         { uploadStatus === UPLOAD_STATUS.DEFAULT && (
-          <p>Try dropping some files here, or click to select files to upload.</p>
+          <p className="text-shadow">Try dropping some files here, or click to select files to upload.</p>
         ) }
         { uploadStatus === UPLOAD_STATUS.SUCCESS && (
           <div>

@@ -38,7 +38,7 @@ class LoginPage extends Component {
     const { email, password, error } = this.state;
 
     return (
-      <div className="ui middle aligned center aligned grid">
+      <div className="ui middle aligned center aligned grid login-page">
         <div className="five wide computer">
           <h2 className="ui teal image header">
             <div style={ { textShadow: '2px 2px #FFF' } } className="content">

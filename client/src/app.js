@@ -16,7 +16,8 @@ class App extends Component {
     const { isAuth } = this.state;
 
     return (
-      <div className="App">
+      <div>
+        <div className="background"/>
         { !isAuth && <LoginPage onLogin={ this.changeAuthStatus }/> }
         { isAuth && <AddWordPage/> }
       </div>

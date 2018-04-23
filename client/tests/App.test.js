@@ -2,7 +2,7 @@
 
 import { shallow } from 'enzyme';
 import React from 'react';
-import App from '../src/App';
+import App from '../src/app';
 
 describe('App', () => {
   let wrapper;
