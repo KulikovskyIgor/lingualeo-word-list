@@ -5,8 +5,8 @@ import { login } from '../../services/login';
 
 class LoginPage extends Component {
   state = {
-    email: 'zegu@eth2btc.info',
-    password: 'zegu@eth2btc.info',
+    email: null,
+    password: null,
     error: null
   };
 
