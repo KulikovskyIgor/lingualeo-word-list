@@ -57,7 +57,7 @@ class AddWordFormComponent extends Component {
     const { word, translation, error, uploadStatus } = this.state;
 
     return (
-      <form className="ui large form">
+      <form className="ui large form add-word-form">
         <div className="ui stacked segment">
           <div className="field">
             <div className="ui left icon input">

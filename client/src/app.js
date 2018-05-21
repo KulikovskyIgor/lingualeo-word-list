@@ -5,11 +5,12 @@ import AddWordPage from './components/add-word-page/add-word-page';
 
 class App extends Component {
   state = {
-    isAuth: false
+    isAuth: sessionStorage.getItem('isAuth') || false
   };
 
   changeAuthStatus = isAuth => {
     this.setState({ isAuth });
+    sessionStorage.setItem('isAuth', isAuth);
   };
 
   render() {
@@ -17,7 +18,6 @@ class App extends Component {
 
     return (
       <div>
-        <div className="background"/>
         { !isAuth && <LoginPage onLogin={ this.changeAuthStatus }/> }
         { isAuth && <AddWordPage/> }
       </div>
