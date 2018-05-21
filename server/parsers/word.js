@@ -13,10 +13,17 @@ const parseOneLineWord = words => {
     const wordLineList = wordLine.split(WORDS_COL_SEPARATOR);
 
     if (wordLineList.length === WORDS_COL_LENGTH) {
-      acc.push({ word: wordLineList[2], translation: wordLineList[3] });
+      const word = wordLineList[2];
+      const translation = adaptUAToRU(wordLineList[3]);
+      acc.push({ word, translation });
     }
     return acc;
   }, []);
 };
 
+const adaptUAToRU = word => {
+  return word.replace(/і/g, 'i');
+};
+
 exports.getParsedWords = getParsedWords;
+exports.adaptUAToRU = adaptUAToRU;
