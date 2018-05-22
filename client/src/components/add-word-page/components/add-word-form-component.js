@@ -53,6 +53,12 @@ class AddWordFormComponent extends Component {
     this.setState({ translation: e.target.value });
   };
 
+  handleKeyPress = e => {
+    if (e.key === 'Enter') {
+      this.handleUpload();
+    }
+  };
+
   render() {
     const { word, translation, error, uploadStatus } = this.state;
 
@@ -63,16 +69,19 @@ class AddWordFormComponent extends Component {
             <div className="ui left icon input">
               <i className="pencil alternate icon"></i>
               <input
-                value={ word } type="text" name="email" placeholder="Word"
+                value={ word } type="text" name="word" placeholder="Word"
                 onChange={ this.handleChangeWord }
+                onKeyPress={ this.handleKeyPress }
               />
             </div>
           </div>
           <div className="field">
             <div className="ui left icon input">
               <i className="pencil alternate icon"></i>
-              <input value={ translation } type="text" name="password" placeholder="Translation"
-                     onChange={ this.handleChangeTranslation }/>
+              <input value={ translation } type="text" name="translation" placeholder="Translation"
+                     onChange={ this.handleChangeTranslation }
+                     onKeyPress={ this.handleKeyPress }
+              />
             </div>
           </div>
           <div className="ui fluid large teal submit button left icon" onClick={ this.handleUpload }>

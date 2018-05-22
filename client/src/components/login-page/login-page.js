@@ -34,6 +34,12 @@ class LoginPage extends Component {
     this.setState({ password: e.target.value });
   };
 
+  handleKeyPress = e => {
+    if (e.key === 'Enter') {
+      this.handleLogin();
+    }
+  };
+
   render() {
     const { email, password, error } = this.state;
 
@@ -53,6 +59,7 @@ class LoginPage extends Component {
                   <input
                     value={ email } type="text" name="email" placeholder="E-mail address"
                     onChange={ this.handleChangeEmail }
+                    onKeyPress={ this.handleKeyPress }
                   />
                 </div>
               </div>
@@ -60,7 +67,9 @@ class LoginPage extends Component {
                 <div className="ui left icon input">
                   <i className="lock icon"></i>
                   <input value={ password } type="password" name="password" placeholder="Password"
-                         onChange={ this.handleChangePassword }/>
+                         onChange={ this.handleChangePassword }
+                         onKeyPress={ this.handleKeyPress }
+                  />
                 </div>
               </div>
               <div className="ui fluid large teal submit button" onClick={ this.handleLogin }>Login</div>

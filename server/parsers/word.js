@@ -22,7 +22,9 @@ const parseOneLineWord = words => {
 };
 
 const adaptUAToRU = word => {
-  return word.replace(/і/g, 'i');
+  return word
+    .replace(/і/g, 'i')
+    .replace(/є/g, 'е');
 };
 
 exports.getParsedWords = getParsedWords;
